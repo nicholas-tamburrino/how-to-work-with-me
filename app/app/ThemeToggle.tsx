@@ -55,9 +55,7 @@ export function ThemeToggle() {
       return () => mql.removeEventListener("change", onChange);
     } catch {
       // Safari fallback
-      // @ts-expect-error older API
       mql.addListener(onChange);
-      // @ts-expect-error older API
       return () => mql.removeListener(onChange);
     }
   }, [mode]);

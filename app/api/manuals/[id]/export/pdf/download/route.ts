@@ -1,7 +1,6 @@
 import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { supabaseAdmin } from "@/lib/supabase/server";
-import { requireOwner } from "@/lib/authorization";
 
 /**
  * GET: download completed PDF export. Query: jobId

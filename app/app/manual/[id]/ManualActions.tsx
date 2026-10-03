@@ -6,7 +6,7 @@ import { api } from "@/lib/api";
 import { useToast } from "@/components/Toast";
 import { LoadingButton } from "@/components/LoadingButton";
 import type { ManualContext, ShareLinkRow } from "@/lib/types";
-import { Badge, Button, MutedText } from "@/components/ui";
+import { Badge, Button } from "@/components/ui";
 
 function friendlyMessage(apiError: string): string {
   if (!apiError) return "Something went wrong. Please try again.";
