@@ -18,6 +18,7 @@ const nextConfig = {
           "img-src 'self' data: blob: https:",
           "font-src 'self' data: https://*.clerk.vercel.app https://*.clerk.com https://*.clerk.accounts.dev",
           "connect-src 'self' https://*.clerk.vercel.app https://*.clerk.com https://*.clerk.accounts.dev https://challenges.cloudflare.com https://*.supabase.co wss://*.supabase.co",
+          "worker-src 'self' blob:",
           "frame-src https://*.clerk.vercel.app https://*.clerk.com https://*.clerk.accounts.dev https://challenges.cloudflare.com",
           "frame-ancestors 'none'",
           "base-uri 'self'",
