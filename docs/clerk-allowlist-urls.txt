@@ -1,0 +1,18 @@
+# Clerk Dashboard → Configure → Paths (or Settings → URLs)
+# Add these under "Allowed redirect URLs" / "Redirect URL allowlist" (one per line if pasting into a list).
+
+# Local dev (copy these into Clerk)
+http://localhost:3000
+http://localhost:3001
+http://localhost:3000/app
+http://localhost:3001/app
+http://localhost:3000/app/new
+http://localhost:3001/app/new
+http://localhost:3000/auth/callback
+http://localhost:3001/auth/callback
+
+# Production (replace yourdomain.com with your real domain)
+# https://yourdomain.com
+# https://yourdomain.com/app
+# https://yourdomain.com/app/new
+# https://yourdomain.com/auth/callback
