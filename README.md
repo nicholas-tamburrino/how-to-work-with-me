@@ -2,7 +2,7 @@
 
 A web app that turns a short questionnaire into a plain-language personal communication manual. The manual is built only from the user's own answers: no personality tests, no labels.
 
-**Status:** working locally and in active development. Not yet deployed. See [Known issues](#known-issues) and [Roadmap](#roadmap).
+**Status:** deployed and working. Live demo: https://how-to-work-with-me-beta.vercel.app (Clerk development keys, so a "Development mode" banner shows at sign-in). Full flow verified on the live site on Oct 3, 2026: sign-up, questionnaire autosave, manual generation, share link create/revoke, PDF export. See [Known issues](#known-issues) and [Roadmap](#roadmap).
 
 ## What it does
 
@@ -84,16 +84,19 @@ There is a manual QA checklist in `docs/QA.md` covering sign-in, access control,
 
 ## Known issues
 
-- After sign-in, redirects depend on the Clerk allowed-URL list being set up correctly (see step 3 above). A custom `/auth/callback` route was added to make the redirect reliable; the full sign-in smoke test has not yet been recorded as passed.
-- The end-to-end smoke test in `docs/QA.md` is not yet fully checked off.
+- After sign-in, redirects depend on the Clerk allowed-URL list being set up correctly (see step 3 above). A custom `/auth/callback` route makes the redirect reliable; sign-in is verified on the live site.
+- The Supabase free tier pauses a project after about a week of inactivity. If the live site shows errors, resume the project in the Supabase dashboard.
+- Rate limits are in memory, so on Vercel they apply per server instance. Upstash Redis is supported for shared limits.
+- Clerk is on development keys; a production instance needs a custom domain.
+- Next.js 14.2.x has a published security advisory; an upgrade to the latest 14.x is planned.
+- `docs/QA.md` is not fully checked off; only the main end-to-end flow was run on the live site.
 
 ## Roadmap
 
-- Finish the smoke test and record the results
 - Add automated tests for the validation and access-control code
 - Add version history for regenerated manuals
 - Add structured logging and a troubleshooting page for admins
-- Deploy to Vercel with a public URL
+- Move to production Clerk keys on a custom domain
 
 ## How it was built
 
